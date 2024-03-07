@@ -1,0 +1,138 @@
+@keyframes rotation {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes backwards-rotation {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(-360deg);
+    }
+}
+
+@keyframes scaling {
+    0% {
+        transform: scale(.65) translateY(65px);
+    }
+
+    15% {
+        transform: scale(.5) translateY(100px);
+    }
+
+    65% {
+        transform: scale(1.2);
+    }
+
+    100% {
+        transform: scale(.65) translateY(65px);
+    }
+}
+
+
+
+$red: #e91b23;
+$animation-duration: 20;  //Sets the speed of rotation
+
+.rotation-container {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    top: 100px;
+    left: 200px;
+    transform: rotate(90deg);
+    animation: rotation #{$animation-duration}s infinite linear;
+
+    &:hover {
+        animation-play-state: paused;
+
+        .item-container {
+            animation-play-state: paused;
+        }
+
+        .item {
+            animation-play-state: paused;
+        }
+    }
+
+
+    .item-container {
+        position: absolute;
+        animation: backwards-rotation #{$animation-duration}s infinite linear;
+    }
+
+    .item-container-1 {
+        bottom: -60px;
+        left: -110px;
+    }
+
+    .item-container-2 {
+        top: -60px;
+        left: -110px;
+    }
+
+    .item-container-3 {
+        left: 10px;
+        bottom: 145px;
+    }
+
+    .item-container-4 {
+        top: -60px;
+        right: -110px;
+    }
+
+    .item-container-5 {
+        bottom: -60px;
+        right: -110px;
+    }
+
+    .item-container-6 {
+        left: 10px;
+        top: 145px;
+    }
+
+
+    .item {
+        display: block;
+        width: 80px;
+        height: 80px;
+        border-radius: 12px;
+        background-color: $red;
+        animation: scaling #{$animation-duration}s infinite linear;
+    }
+
+    .item-1 {
+        animation-delay: #{($animation-duration/8*8)+$animation-duration/8-2*$animation-duration}s;
+    }
+
+    .item-2 {
+        animation-delay: #{($animation-duration/8*7)+$animation-duration/8-2*$animation-duration}s;
+    }
+
+    .item-3 {
+        animation-delay: #{($animation-duration/8*6)+$animation-duration/8-2*$animation-duration}s;
+    }
+
+    .item-4 {
+        animation-delay: #{($animation-duration/8*5)+$animation-duration/8-2*$animation-duration}s;
+    }
+
+    .item-5 {
+        animation-delay: #{($animation-duration/8*4)+$animation-duration/8-2*$animation-duration}s;
+    }
+
+    .item-6 {
+        animation-delay: #{($animation-duration/8*3)+$animation-duration/8-2*$animation-duration}s;
+    }
+.item-6 {
+        animation-delay: #{($animation-duration/8*2)+$animation-duration/8-2*$animation-duration}s;
+    }
+.item-6 {
+        animation-delay: #{($animation-duration/8*1)+$animation-duration/8-2*$animation-duration}s;
+    }
+}
